@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'project_card_details.dart';
+
 class ProjectCard extends StatefulWidget {
   final AnimationController homeAnimationController;
 
@@ -40,9 +42,6 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
         if (widget.homeAnimationController.value == 0) {
           widget.homeAnimationController.forward();
           _cardAnimController.forward();
-        } else {
-          widget.homeAnimationController.reverse();
-          _cardAnimController.reverse();
         }
       },
       onTap: () {
@@ -71,6 +70,10 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
                   offset: Offset(0, 12),
                 ),
               ],
+            ),
+            child: ProjectCardDetails(
+              homeAnimationController: widget.homeAnimationController,
+              cardAnimController: _cardAnimController,
             ),
           ),
         ],
