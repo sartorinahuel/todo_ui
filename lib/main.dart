@@ -18,3 +18,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+const int animationSpeed = 1500;

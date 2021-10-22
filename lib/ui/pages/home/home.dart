@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo_ui/domain/models/projects.dart';
 import 'package:todo_ui/domain/repositories/projects_repository.dart';
+import 'package:todo_ui/main.dart';
+import 'package:todo_ui/ui/pages/home/widgets/home_second_layer.dart';
 
 import 'package:todo_ui/ui/widgets/custom_gradient_bacground.dart';
 
@@ -21,7 +23,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   void initState() {
     _backgroundController = CustomBackgroundController();
     _homeAnimationController = AnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: animationSpeed),
       vsync: this,
     );
     super.initState();
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return Scaffold(
       body: AnimatedBuilder(
         animation: _homeAnimationController,
-        builder: (context, snapshot) {
+        builder: (context, _) {
           return Stack(
             children: [
               CustomGradientBackground(
@@ -48,11 +50,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               SizedBox(
                 height: size.height,
                 width: size.width,
-                child: Column(
-                  children: [
-                    // const SizedBox(height: 400),
-                  ],
-                ),
+                child: HomeSecondLayerScreen(homeAnimationController: _homeAnimationController),
               ),
               SizedBox(
                 height: size.height,

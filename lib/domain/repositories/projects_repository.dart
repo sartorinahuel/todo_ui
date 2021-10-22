@@ -11,21 +11,21 @@ class ProjectRepository {
   Stream<List<Project>> get projectsStream => _projectsStreamController.stream;
 
   //
-  Project _project1 = Project('1111');
-  Project _project2 = Project('1112');
-  Project _project3 = Project('1113');
-  Project _project4 = Project('1114');
+  final Project _project1 = Project('1111');
+  final Project _project2 = Project('1112');
+  final Project _project3 = Project('1113');
+  final Project _project4 = Project('1114');
 
   //Tasks
-  Task _task1 = Task('id1');
-  Task _task2 = Task('id2');
-  Task _task3 = Task('id3');
-  Task _task4 = Task('id4');
-  Task _task5 = Task('id5');
-  Task _task6 = Task('id6');
-  Task _task7 = Task('id7');
-  Task _task8 = Task('id8');
-  Task _task9 = Task('id9');
+  final Task _task1 = Task('id1');
+  final Task _task2 = Task('id2');
+  final Task _task3 = Task('id3');
+  final Task _task4 = Task('id4');
+  final Task _task5 = Task('id5');
+  final Task _task6 = Task('id6');
+  final Task _task7 = Task('id7');
+  final Task _task8 = Task('id8');
+  final Task _task9 = Task('id9');
 
   //
   ProjectRepository() {

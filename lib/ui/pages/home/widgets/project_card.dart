@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:todo_ui/main.dart';
 import 'project_card_details.dart';
 
 class ProjectCard extends StatefulWidget {
@@ -21,7 +22,7 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
   @override
   void initState() {
     _cardAnimController = AnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: animationSpeed),
       vsync: this,
     );
     _easeAnimation = Tween(begin: 0.0, end: 1.0).animate(
@@ -53,11 +54,11 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
       child: Column(
         children: [
           SizedBox(
-            height: (size.height * 0.4) * (1 - _easeAnimation.value),
+            height: (size.height * 0.47) * (1 - _easeAnimation.value),
           ),
           Container(
             width: size.width * 0.8 - (margin * 2) + (size.width * 0.2) * _easeAnimation.value,
-            height: 400 + (size.height - 400) * _easeAnimation.value,
+            height: 350 + (size.height - 350) * _easeAnimation.value,
             margin: EdgeInsets.all(margin),
             decoration: BoxDecoration(
               color: Colors.white,
