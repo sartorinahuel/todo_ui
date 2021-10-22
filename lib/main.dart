@@ -19,4 +19,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-const int animationSpeed = 1500;
+const int animationSpeed = 500;

@@ -38,6 +38,8 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     double margin = 10 * (1 - _easeAnimation.value);
+    final Size cardSize = Size(size.width * 0.8 - (margin * 2) + (size.width * 0.2) * _easeAnimation.value,
+        350 + (size.height - 350) * _easeAnimation.value);
     return GestureDetector(
       onVerticalDragStart: (details) {
         if (widget.homeAnimationController.value == 0) {
@@ -57,8 +59,8 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
             height: (size.height * 0.47) * (1 - _easeAnimation.value),
           ),
           Container(
-            width: size.width * 0.8 - (margin * 2) + (size.width * 0.2) * _easeAnimation.value,
-            height: 350 + (size.height - 350) * _easeAnimation.value,
+            width: cardSize.width,
+            height: cardSize.height,
             margin: EdgeInsets.all(margin),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -75,6 +77,8 @@ class _ProjectCardState extends State<ProjectCard> with SingleTickerProviderStat
             child: ProjectCardDetails(
               homeAnimationController: widget.homeAnimationController,
               cardAnimController: _cardAnimController,
+              easeAnimation: _easeAnimation,
+              cardSize: cardSize,
             ),
           ),
         ],
