@@ -6,7 +6,7 @@ import 'package:todo_ui/ui/pages/home/widgets/home_second_layer.dart';
 
 import 'package:todo_ui/ui/widgets/custom_gradient_bacground.dart';
 
-import 'widgets/project_card.dart';
+import '../project/project_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

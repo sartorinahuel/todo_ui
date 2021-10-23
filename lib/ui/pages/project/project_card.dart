@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:todo_ui/main.dart';
-import 'project_card_details.dart';
+import 'project_card_details/project_card_details.dart';
 
 class ProjectCard extends StatefulWidget {
   final AnimationController homeAnimationController;
